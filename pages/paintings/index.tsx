@@ -1,5 +1,6 @@
 import PaintingList from "../../components/painting/painting-list"
-import type { PaintingInterface } from "../api/paintings"
+import type { PaintingInterface } from "../../services/painting"
+import { getPaintings } from "../../services/painting"
 
 type props = {
   paintings: PaintingInterface[]
@@ -11,8 +12,7 @@ function Paintings({ paintings }: props) {
 export default Paintings
 
 export const getStaticProps = async () => {
-  const response = await fetch("http://localhost:3000/api/paintings")
-  const paintings = await response.json()
+  const paintings = await getPaintings()
   return {
     props: {
       paintings,

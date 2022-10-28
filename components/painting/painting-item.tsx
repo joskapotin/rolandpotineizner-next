@@ -1,10 +1,10 @@
-import type { PaintingInterface } from "../../pages/api/paintings"
+import type { PaintingInterface } from "../../services/painting"
 
 type props = {
   painting: PaintingInterface
 }
 
 function PaintingItem({ painting }: props) {
-  return <div>PaintingItem</div>
+  return <h2>{painting.title}</h2>
 }
 export default PaintingItem

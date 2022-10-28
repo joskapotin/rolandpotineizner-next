@@ -1,4 +1,4 @@
-import type { PaintingInterface } from "../../pages/api/paintings"
+import type { PaintingInterface } from "../../services/painting"
 import PaintingItem from "./painting-item"
 
 type props = {
