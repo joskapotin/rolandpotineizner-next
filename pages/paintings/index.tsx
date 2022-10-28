@@ -7,7 +7,11 @@ type props = {
 }
 
 function Paintings({ paintings }: props) {
-  return <PaintingList paintings={paintings} />
+  return (
+    <section className="col-span-full">
+      <PaintingList paintings={paintings} />
+    </section>
+  )
 }
 export default Paintings
 

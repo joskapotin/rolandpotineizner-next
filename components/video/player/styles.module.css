@@ -1,0 +1,7 @@
+.timeline::before {
+  right: calc(100% - var(--preview-position) * 100%);
+}
+
+.timeline::after {
+  right: calc(100% - var(--progress-position) * 100%);
+}

@@ -38,12 +38,12 @@ export interface PaintingInterface {
   thumbBlurhash: string
 }
 
-export const getPaintings = async () => {
+export const getPaintings = async (range: string = SHEET.RANGE.ALL) => {
   // First we get the data from google sheet API
   const sheets = gSheets({ version: "v4", auth: API.KEY })
   const response = await sheets.spreadsheets.values.get({
     spreadsheetId: SHEET.ID,
-    range: SHEET.RANGE,
+    range,
   })
 
   const values = response.data.values
