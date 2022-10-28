@@ -2,7 +2,7 @@ import { sheets as gSheets } from "@googleapis/sheets"
 import { GaxiosError } from "gaxios"
 import type { NextApiRequest, NextApiResponse } from "next"
 import { API, SHEET } from "../../constants/constants"
-import { paintingFactory } from "./helpers"
+import { paintingFactory } from "../../helpers/painting-factory"
 
 export interface PaintingBeforeTypeInterface {
   id: string
@@ -73,6 +73,7 @@ export default async function handler(
       // Third we need to provide data type
       const data = rawData.map(entry => paintingFactory(entry))
 
+      // And forth we return the data
       return res.status(200).json(data)
     } catch (error) {
       // the GaxiosError should have a code error that we can use
