@@ -1,7 +1,7 @@
 import type {
   PaintingBeforeTypeInterface,
   PaintingInterface,
-} from "../pages/api/paintings"
+} from "../services/painting"
 
 export const paintingFactory = (
   painting: PaintingBeforeTypeInterface
