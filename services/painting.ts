@@ -39,34 +39,29 @@ export interface PaintingInterface {
 }
 
 export const getPaintings = async () => {
-  try {
-    // First we get the data from google sheet API
-    const sheets = gSheets({ version: "v4", auth: API.KEY })
-    const response = await sheets.spreadsheets.values.get({
-      spreadsheetId: SHEET.ID,
-      range: SHEET.RANGE,
-    })
+  // First we get the data from google sheet API
+  const sheets = gSheets({ version: "v4", auth: API.KEY })
+  const response = await sheets.spreadsheets.values.get({
+    spreadsheetId: SHEET.ID,
+    range: SHEET.RANGE,
+  })
 
-    const values = response.data.values as string[][]
+  const values = response.data.values
 
-    if (!values || values.length <= 0) throw new Error("Could not format data")
+  if (!values || values.length <= 0) throw new Error("Could not format data")
 
-    // Second we need to format the data
-    const labels = values.at(0) as [keyof PaintingBeforeTypeInterface]
-    const entries = values.slice(1)
+  // Second we need to format the data
+  const labels = values.at(0) as [keyof PaintingBeforeTypeInterface]
+  const entries = values.slice(1)
 
-    const rawData = entries.map(entry =>
-      entry.reduce((acc, current, index) => {
-        const property = labels.at(index)
-        if (property) acc[property] = current
-        return acc
-      }, {} as PaintingBeforeTypeInterface)
-    )
+  const rawData = entries.map(entry =>
+    entry.reduce((acc, current, index) => {
+      const property = labels.at(index)
+      if (property) acc[property] = current
+      return acc
+    }, {} as PaintingBeforeTypeInterface)
+  )
 
-    // Third we need to provide data type
-    return rawData.map(entry => paintingFactory(entry))
-  } catch (error) {
-    if (error instanceof Error) throw new Error(error.message)
-    throw new Error("Oops something went wrong!", { cause: error })
-  }
+  // Third we need to provide data type
+  return rawData.map(entry => paintingFactory(entry))
 }
