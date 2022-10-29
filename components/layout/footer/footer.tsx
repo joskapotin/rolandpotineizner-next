@@ -1,8 +1,8 @@
 import { useMemo } from "react"
-import ExternalLinkSvg from "../svg/external-link-svg"
-import GitHubLogoSvg from "../svg/github-logo-svg"
-import MailSvg from "../svg/mail-svg"
-import PhoneSvg from "../svg/phone-svg"
+import ExternalLinkSvg from "../../svg/external-link-svg"
+import GitHubLogoSvg from "../../svg/github-logo-svg"
+import MailSvg from "../../svg/mail-svg"
+import PhoneSvg from "../../svg/phone-svg"
 
 function Footer() {
   const friends = useMemo(
@@ -55,13 +55,19 @@ function Footer() {
         </ul>
       </section>
       <section>
-        <h4 className="mb-4 tracking-widest text-amber-900">Pour me contacter</h4>
+        <h4 className="mb-4 tracking-widest text-amber-900">
+          Pour me contacter
+        </h4>
         <ul className="flex flex-col gap-3">
           <li className="flex gap-2">
             <i>
               <PhoneSvg />
             </i>
-            <a href="tel:00660835318" className="link" title="Pour m'appeller directement">
+            <a
+              href="tel:00660835318"
+              className="link"
+              title="Pour m'appeller directement"
+            >
               +33 6 60 83 53 18
             </a>
           </li>
@@ -80,7 +86,9 @@ function Footer() {
         </ul>
       </section>
       <section>
-        <h4 className="mb-4 tracking-widest text-amber-900">Conception et réalisation</h4>
+        <h4 className="mb-4 tracking-widest text-amber-900">
+          Conception et réalisation
+        </h4>
         <ul className="flex flex-col gap-3">
           <li className="flex gap-2">
             <i>

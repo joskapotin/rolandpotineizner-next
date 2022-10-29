@@ -1,8 +1,8 @@
-import { ROUTES } from "../../../constants/constants"
-import useToggle from "../../../hooks/useToggle"
-import AboutSvg from "../../svg/about-svg"
-import HomeSvg from "../../svg/home-svg"
-import PaintBrushSvg from "../../svg/paint-brush-svg"
+import { ROUTES } from "../../../../constants/constants"
+import useToggle from "../../../../hooks/useToggle"
+import AboutSvg from "../../../svg/about-svg"
+import HomeSvg from "../../../svg/home-svg"
+import PaintBrushSvg from "../../../svg/paint-brush-svg"
 import Burger from "./burger"
 import NavMenuItem from "./nav-menu-item"
 

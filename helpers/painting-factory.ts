@@ -1,15 +1,7 @@
-import type {
-  PaintingBeforeTypeInterface,
-  PaintingInterface,
-} from "../services/painting"
+import type { PaintingBeforeTypeInterface, PaintingInterface } from "../services/painting"
 
-export const paintingFactory = (
-  painting: PaintingBeforeTypeInterface
-): PaintingInterface => {
-  const order =
-    typeof painting.order === "number"
-      ? painting.order
-      : parseInt(painting.order, 10)
+export const paintingFactory = (painting: PaintingBeforeTypeInterface): PaintingInterface => {
+  const order = typeof painting.order === "number" ? painting.order : parseInt(painting.order, 10)
   const visible = painting.visible === "true"
   const imageWidth =
     typeof painting.imageWidth === "number"

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ROUTES } from "../../constants/constants"
+import { ROUTES } from "../../../constants/constants"
 import NavMenu from "./nav-menu/nav-menu"
 
 function Header() {
