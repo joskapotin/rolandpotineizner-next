@@ -62,9 +62,7 @@ function About() {
           </cite>
         </Quote>
 
-        <div className="relative">
-          <VideoPlayer url="/videos/reportage-fr3.mp4" thumbnail={videoThumbnail.src} />
-        </div>
+        <VideoPlayer url="/videos/reportage-fr3.mp4" thumbnail={videoThumbnail.src} />
       </section>
 
       <section>
