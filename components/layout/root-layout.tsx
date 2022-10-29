@@ -1,4 +1,5 @@
 import type { ReactNode } from "react"
+import SkipToMainContent from "../skip-to-main-content/skip-to-main-content"
 import Footer from "./footer/footer"
 import Header from "./header/header"
 
@@ -9,6 +10,7 @@ type props = {
 function RootLayout({ children }: props) {
   return (
     <>
+      <SkipToMainContent />
       <Header />
       <main
         id="main-content"
