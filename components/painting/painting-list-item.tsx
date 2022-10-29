@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { PATH, ROUTES } from "../../constants/constants"
-import type { IPainting } from "../../services/painting"
+import type { IPainting } from "../../services/paintings"
 
 type props = {
   painting: IPainting

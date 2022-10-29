@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next"
-import type { IPainting } from "../../services/painting"
-import { getPaintings } from "../../services/painting"
+import type { IPainting } from "../../services/paintings"
+import { getPaintings } from "../../services/paintings"
 
 export default async function handler(
   req: NextApiRequest,
@@ -8,7 +8,7 @@ export default async function handler(
 ) {
   if (req.method === "GET") {
     try {
-      const paintings = getPaintings()
+      const paintings = await getPaintings()
       return res.status(200).json(paintings)
     } catch (error) {
       // A normal error return a status 500

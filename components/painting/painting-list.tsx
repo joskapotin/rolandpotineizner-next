@@ -1,4 +1,4 @@
-import type { IPainting } from "../../services/painting"
+import type { IPainting } from "../../services/paintings"
 import PaintingListItem from "./painting-list-item"
 
 type props = {

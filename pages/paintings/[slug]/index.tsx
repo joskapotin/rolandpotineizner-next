@@ -2,7 +2,7 @@ import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "ne
 import { ParsedUrlQuery } from "querystring"
 import PaintingDetails from "../../../components/painting/painting-details"
 import PaintingListItem from "../../../components/painting/painting-list-item"
-import { getPaintings } from "../../../services/painting"
+import { getPaintings } from "../../../services/paintings"
 
 interface IParams extends ParsedUrlQuery {
   slug: string
@@ -34,7 +34,7 @@ function Painting({
 export default Painting
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paintings = getPaintings()
+  const paintings = await getPaintings()
   const paths = paintings.map(painting => ({
     params: {
       slug: painting.slug,
@@ -46,7 +46,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async context => {
   const { slug } = context.params as IParams
 
-  const paintings = getPaintings()
+  const paintings = await getPaintings()
 
   const currentPaintingIndex = paintings.findIndex(painting => painting.slug === slug)
 

@@ -28,3 +28,7 @@ export const ROUTES = {
 export const STORAGE = {
   TTL: process.env.LOCALSTORAGE_TTL,
 }
+
+export const DB = {
+  URL: "/data/paintings.json",
+}

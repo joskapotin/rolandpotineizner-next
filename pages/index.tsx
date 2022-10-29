@@ -3,10 +3,12 @@ import type { InferGetStaticPropsType } from "next/types"
 import Carousel from "../components/carousel/carousel"
 import Quote from "../components/quote/quote"
 import { PATH } from "../constants/constants"
-import { getPaintings } from "../services/painting"
+import { getPaintings } from "../services/paintings"
 
-export default function Home({ paintings }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const carouselItems = paintings.map(painting => ({
+export default function Home({
+  featuredPaintings,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+  const carouselItems = featuredPaintings.map(painting => ({
     id: painting.id,
     title: painting.title,
     imageUrl: `${PATH.PAINTINGS.SOURCE}/${painting.filename}`,
@@ -54,10 +56,11 @@ export default function Home({ paintings }: InferGetStaticPropsType<typeof getSt
 }
 
 export const getStaticProps = async () => {
-  const paintings = getPaintings().slice(0, 5)
+  const paintings = await getPaintings()
+  const featuredPaintings = paintings.slice(0, 5)
   return {
     props: {
-      paintings,
+      featuredPaintings,
     },
   }
 }

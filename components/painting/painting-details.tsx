@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { PATH } from "../../constants/constants"
-import { IPainting } from "../../services/painting"
+import { IPainting } from "../../services/paintings"
 
 type Props = {
   painting: IPainting
