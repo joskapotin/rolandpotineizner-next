@@ -10,7 +10,7 @@ function NavMenu() {
   const [isOpen, toggleIsOpen] = useToggle(false)
 
   return (
-    <nav className="flex flex-col sm:flex-row">
+    <nav className="flex flex-col sm:flex-row" aria-label="main">
       <Burger isOpen={isOpen} toggleIsOpen={toggleIsOpen} />
 
       <ul

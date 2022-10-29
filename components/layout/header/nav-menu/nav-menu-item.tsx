@@ -11,7 +11,7 @@ type Props = {
 function NavMenuItem({ children, isOpen, toggleIsOpen, url, title }: Props) {
   return (
     <Link
-      title={`Go to ${title}`}
+      title={title}
       className={`${
         isOpen ? "opacity-100 delay-100" : "opacity-0"
       }  block transition-opacity  duration-300 ease-in-out sm:opacity-100 md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl`}

@@ -1,23 +1,30 @@
 import Image from "next/image"
-import { PATH } from "../../constants/constants"
-import type { PaintingInterface } from "../../services/painting"
+import Link from "next/link"
+import { PATH, ROUTES } from "../../constants/constants"
+import type { IPainting } from "../../services/painting"
 
 type props = {
-  painting: PaintingInterface
+  painting: IPainting
 }
 
 function PaintingListItem({ painting }: props) {
-  const { title, filename } = painting
+  const { title, filename, slug } = painting
   const imageSrc = `${PATH.PAINTINGS.SQUARE}/${filename}`
 
   return (
-    <Image
-      src={imageSrc}
-      alt={title}
-      width={200}
-      height={200}
-      className="rounded-full w-full border-4 border-gray-100 shadow-2xl overflow-hidden object-cover object-center"
-    />
+    <Link
+      href={`${ROUTES.PAINTINGS.URL}/${slug}`}
+      className="opacity-60 transition-opacity duration-300 ease-in-out hover:opacity-100"
+    >
+      <Image
+        src={imageSrc}
+        alt={title}
+        width={200}
+        height={200}
+        className="w-full overflow-hidden rounded-full border-4 border-gray-100 object-cover object-center shadow-2xl"
+      />
+      <span className="sr-only">Voir ${title}</span>
+    </Link>
   )
 }
 export default PaintingListItem

@@ -1,12 +1,8 @@
+import type { InferGetStaticPropsType } from "next/types"
 import PaintingList from "../../components/painting/painting-list"
-import type { PaintingInterface } from "../../services/painting"
 import { getPaintings } from "../../services/painting"
 
-type props = {
-  paintings: PaintingInterface[]
-}
-
-function Paintings({ paintings }: props) {
+function Paintings({ paintings }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <section className="col-span-full">
       <PaintingList paintings={paintings} />
@@ -16,7 +12,7 @@ function Paintings({ paintings }: props) {
 export default Paintings
 
 export const getStaticProps = async () => {
-  const paintings = await getPaintings()
+  const paintings = getPaintings()
   return {
     props: {
       paintings,

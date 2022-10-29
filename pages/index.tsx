@@ -1,15 +1,11 @@
 import Head from "next/head"
+import type { InferGetStaticPropsType } from "next/types"
 import Carousel from "../components/carousel/carousel"
 import Quote from "../components/quote/quote"
-import { PATH, SHEET } from "../constants/constants"
-import type { PaintingInterface } from "../services/painting"
+import { PATH } from "../constants/constants"
 import { getPaintings } from "../services/painting"
 
-type Props = {
-  paintings: PaintingInterface[]
-}
-
-export default function Home({ paintings }: Props) {
+export default function Home({ paintings }: InferGetStaticPropsType<typeof getStaticProps>) {
   const carouselItems = paintings.map(painting => ({
     id: painting.id,
     title: painting.title,
@@ -58,7 +54,7 @@ export default function Home({ paintings }: Props) {
 }
 
 export const getStaticProps = async () => {
-  const paintings = await getPaintings(SHEET.RANGE.FEATURED)
+  const paintings = getPaintings().slice(0, 5)
   return {
     props: {
       paintings,

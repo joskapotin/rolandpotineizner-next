@@ -1,11 +1,11 @@
 import { GaxiosError } from "gaxios"
 import type { NextApiRequest, NextApiResponse } from "next"
-import type { PaintingInterface } from "../../services/painting"
+import type { IPainting } from "../../services/painting"
 import { getPaintings } from "../../services/painting"
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<PaintingInterface[] | Error>
+  res: NextApiResponse<IPainting[] | Error>
 ) {
   if (req.method === "GET") {
     try {
@@ -20,9 +20,7 @@ export default async function handler(
       if (error instanceof Error) return res.status(500).json(error)
 
       // Unhandled error return a custom message with also a status 500
-      return res
-        .status(500)
-        .json(new Error("Could not fetch data", { cause: error }))
+      return res.status(500).json(new Error("Could not fetch data", { cause: error }))
     }
   }
 }
