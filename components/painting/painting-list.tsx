@@ -9,10 +9,7 @@ function PaintingList({ paintings }: props) {
   return (
     <ul className="flex flex-wrap justify-center gap-4">
       {paintings.map((painting: PaintingInterface) => (
-        <li
-          key={painting.id}
-          className=" w-40 rounded-full border-4 border-gray-100 shadow-2xl overflow-hidden"
-        >
+        <li key={painting.id} className="basis-40 flex-grow">
           <PaintingListItem painting={painting} />
         </li>
       ))}

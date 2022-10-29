@@ -16,7 +16,7 @@ function PaintingListItem({ painting }: props) {
       alt={title}
       width={200}
       height={200}
-      className="object-cover object-center"
+      className="rounded-full w-full border-4 border-gray-100 shadow-2xl overflow-hidden object-cover object-center"
     />
   )
 }
