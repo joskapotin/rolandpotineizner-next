@@ -17,9 +17,15 @@ function Painting({
     <>
       <PaintingDetails painting={currentPainting} />
 
-      <nav className="relative col-span-full flex w-full justify-evenly gap-2">
-        <PaintingListItem painting={prevPainting} />
-        <PaintingListItem painting={nextPainting} />
+      <nav aria-label="secondary" className="col-span-full w-full ">
+        <ul className="relative flex justify-evenly gap-2">
+          <li className="min-w-[8rem] max-w-[12rem] flex-grow ">
+            <PaintingListItem painting={prevPainting} />
+          </li>
+          <li className="min-w-[8rem] max-w-[12rem] flex-grow ">
+            <PaintingListItem painting={nextPainting} />
+          </li>
+        </ul>
       </nav>
     </>
   )
@@ -44,16 +50,13 @@ export const getStaticProps: GetStaticProps = async context => {
 
   const currentPaintingIndex = paintings.findIndex(painting => painting.slug === slug)
 
-  if (currentPaintingIndex) {
-    return {
-      props: {
-        prevPainting: paintings.at(currentPaintingIndex - 1),
-        currentPainting: paintings.at(currentPaintingIndex),
-        nextPainting: paintings.at((currentPaintingIndex + 1) % paintings.length),
-      },
-    }
-  }
+  if (isNaN(currentPaintingIndex)) return { notFound: true }
+
   return {
-    notFound: true,
+    props: {
+      prevPainting: paintings.at(currentPaintingIndex - 1),
+      currentPainting: paintings.at(currentPaintingIndex),
+      nextPainting: paintings.at((currentPaintingIndex + 1) % paintings.length),
+    },
   }
 }

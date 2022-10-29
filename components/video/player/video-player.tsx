@@ -19,12 +19,8 @@ function VideoPlayer({ url, thumbnail }: VideoPlayerProps) {
   const volumeSliderRef = useRef<HTMLInputElement>(null)
 
   const [isPause, setIsPause] = useState(true)
-  const [volumeStatus, setVolumeStatus] = useState<"high" | "low" | "muted">(
-    "high"
-  )
-  const [screenState, setScreenState] = useState<"fullscreen" | "normal">(
-    "normal"
-  )
+  const [volumeStatus, setVolumeStatus] = useState<"high" | "low" | "muted">("high")
+  const [screenState, setScreenState] = useState<"fullscreen" | "normal">("normal")
 
   // Play / Pause
   const togglePause = useCallback(() => {
@@ -49,24 +45,17 @@ function VideoPlayer({ url, thumbnail }: VideoPlayerProps) {
   }, [togglePause])
 
   // Timeline
-  const handleTimelineUpdate = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+  const handleTimelineUpdate = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (timelineRef.current) {
       const percent = getXPositionInPercent({
         element: timelineRef.current,
         mouseX: event.clientX,
       })
-      timelineRef.current.style.setProperty(
-        "--preview-position",
-        percent.toString()
-      )
+      timelineRef.current.style.setProperty("--preview-position", percent.toString())
     }
   }
 
-  const handleJumTo = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+  const handleJumTo = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (timelineRef.current && videoRef.current) {
       const percent = getXPositionInPercent({
         element: timelineRef.current,
@@ -85,21 +74,14 @@ function VideoPlayer({ url, thumbnail }: VideoPlayerProps) {
   // Duration
   const handleOnLoadData = () => {
     if (totalTimeRef.current && videoRef.current)
-      totalTimeRef.current.textContent = formatDuration(
-        videoRef.current.duration
-      )
+      totalTimeRef.current.textContent = formatDuration(videoRef.current.duration)
   }
 
   const handleOnTimeUpdate = () => {
     if (currentTimeRef.current && videoRef.current && timelineRef.current) {
-      currentTimeRef.current.textContent = formatDuration(
-        videoRef.current.currentTime
-      )
+      currentTimeRef.current.textContent = formatDuration(videoRef.current.currentTime)
       const percent = videoRef.current.currentTime / videoRef.current.duration
-      timelineRef.current.style.setProperty(
-        "--progress-position",
-        percent.toString()
-      )
+      timelineRef.current.style.setProperty("--progress-position", percent.toString())
     }
   }
 
@@ -154,9 +136,7 @@ function VideoPlayer({ url, thumbnail }: VideoPlayerProps) {
   }
 
   // Keyboard navigation
-  const handleTimelineKeyboard = (
-    event: React.KeyboardEvent<HTMLButtonElement>
-  ) => {
+  const handleTimelineKeyboard = (event: React.KeyboardEvent<HTMLButtonElement>) => {
     switch (event.key.toLowerCase()) {
       case " ":
         togglePause()
@@ -225,11 +205,7 @@ function VideoPlayer({ url, thumbnail }: VideoPlayerProps) {
             1x
           </button>
 
-          <button
-            type="button"
-            className="h-8 w-8"
-            onClick={toggleFullScreenMode}
-          >
+          <button type="button" className="h-8 w-8" onClick={toggleFullScreenMode}>
             {screenState === "fullscreen" ? (
               <svg className="close" viewBox="0 0 24 24">
                 <path

@@ -10,4 +10,5 @@ function QuoteSvg() {
     </svg>
   )
 }
+
 export default QuoteSvg
