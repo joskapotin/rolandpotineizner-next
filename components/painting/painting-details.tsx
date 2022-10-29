@@ -18,7 +18,7 @@ function PaintingDetails({ painting }: Props) {
         height={imageHeight}
       />
 
-      <ul className="self-center">
+      <ul className="self-center text-center lg:text-start">
         <li className="mb-2 text-2xl">
           <span className="mb-4 tracking-widest text-amber-900">Titre:</span> {title}
         </li>
