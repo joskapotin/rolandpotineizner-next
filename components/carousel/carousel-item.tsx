@@ -24,6 +24,7 @@ function CarouselItem({ item, index, currentIndex }: CarouselItemProps) {
       width={item.imageWidth}
       height={item.imageHeight}
       alt={item.title}
+      title={item.title}
       className={`
         ${isCurrent ? "opacity-100" : "pointer-events-none opacity-0"} 
         col-span-full row-span-full transition-opacity duration-500 ease-in`}
