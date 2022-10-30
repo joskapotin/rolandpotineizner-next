@@ -7,7 +7,7 @@ type Props = {
 }
 
 function PaintingDetails({ painting }: Props) {
-  const { title, year, height, width, filename, imageWidth, imageHeight } = painting
+  const { title, year, height, width, filename, imageWidth, imageHeight, imageBlurhash } = painting
   return (
     <>
       <Image
@@ -16,6 +16,8 @@ function PaintingDetails({ painting }: Props) {
         src={`${PATH.PAINTINGS.SOURCE}/${filename}`}
         width={imageWidth}
         height={imageHeight}
+        blurDataURL={imageBlurhash}
+        placeholder="blur"
       />
 
       <ul className="self-center text-center lg:text-start">

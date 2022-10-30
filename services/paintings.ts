@@ -17,7 +17,7 @@ export interface IPainting {
   imageHeight: number
   thumbWidth: number
   thumbHeight: number
-  thumbBlurhash: string
+  squareBlurhash: string
 }
 
 export const getPaintings = async (): Promise<IPainting[]> => {

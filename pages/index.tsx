@@ -14,6 +14,7 @@ export default function Home({
     imageUrl: `${PATH.PAINTINGS.SOURCE}/${painting.filename}`,
     imageWidth: painting.imageWidth,
     imageHeight: painting.imageHeight,
+    imageBlurhash: painting.imageBlurhash,
   }))
 
   return (

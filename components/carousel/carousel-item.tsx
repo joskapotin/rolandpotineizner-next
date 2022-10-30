@@ -6,6 +6,7 @@ export type CarouselItemType = {
   imageUrl: string
   imageWidth: number
   imageHeight: number
+  imageBlurhash: string
 }
 
 type CarouselItemProps = {
@@ -26,6 +27,8 @@ function CarouselItem({ item, index, currentIndex }: CarouselItemProps) {
       className={`
         ${isCurrent ? "opacity-100" : "pointer-events-none opacity-0"} 
         col-span-full row-span-full transition-opacity duration-500 ease-in`}
+      blurDataURL={item.imageBlurhash}
+      placeholder="blur"
     />
   )
 }

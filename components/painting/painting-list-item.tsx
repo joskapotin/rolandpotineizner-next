@@ -8,7 +8,7 @@ type props = {
 }
 
 function PaintingListItem({ painting }: props) {
-  const { title, filename, slug } = painting
+  const { title, filename, slug, squareBlurhash } = painting
   const imageSrc = `${PATH.PAINTINGS.SQUARE}/${filename}`
 
   return (
@@ -22,6 +22,8 @@ function PaintingListItem({ painting }: props) {
         width={200}
         height={200}
         className="w-full overflow-hidden rounded-full border-4 border-gray-100 object-cover object-center shadow-2xl"
+        blurDataURL={squareBlurhash}
+        placeholder="blur"
       />
       <span className="sr-only">Voir ${title}</span>
     </Link>
