@@ -7,9 +7,9 @@ type props = {
 
 function PaintingList({ paintings }: props) {
   return (
-    <ul className="flex flex-wrap justify-center gap-4">
+    <ul className="grid grid-cols-autofill gap-4">
       {paintings.map((painting: IPainting) => (
-        <li key={painting.id} className="flex-grow basis-40">
+        <li key={painting.id}>
           <PaintingListItem painting={painting} />
         </li>
       ))}

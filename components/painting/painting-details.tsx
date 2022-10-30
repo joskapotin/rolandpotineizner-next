@@ -11,7 +11,6 @@ function PaintingDetails({ painting }: Props) {
   return (
     <>
       <Image
-        className="md:justify-self-end"
         alt={title}
         src={`${PATH.PAINTINGS.SOURCE}/${filename}`}
         width={imageWidth}

@@ -15,6 +15,7 @@ function PaintingListItem({ painting }: props) {
     <Link
       href={`${ROUTES.PAINTINGS.URL}/${slug}`}
       className="basis- opacity-60 transition-opacity duration-300 ease-in-out hover:opacity-100"
+      title={`Voir le tableau "${title}"`}
     >
       <Image
         src={imageSrc}

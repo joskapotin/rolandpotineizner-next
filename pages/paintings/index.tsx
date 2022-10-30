@@ -4,7 +4,7 @@ import { getPaintings } from "../../services/paintings"
 
 function Paintings({ paintings }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <section className="col-span-full">
+    <section className="col-span-full w-full">
       <PaintingList paintings={paintings} />
     </section>
   )
