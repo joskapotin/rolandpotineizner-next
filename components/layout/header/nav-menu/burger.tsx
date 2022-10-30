@@ -11,7 +11,7 @@ function Burger({ isOpen, toggleIsOpen }: BurgerProps) {
       aria-label="Menu"
       aria-controls="navigation"
       onClick={toggleIsOpen}
-      className="relative z-10 h-14 w-14 text-gray-900 sm:hidden"
+      className="relative z-10 h-10 w-10 text-gray-900 sm:hidden"
     >
       <span className="sr-only">{isOpen ? "Close menu" : "Open menu"}</span>
       <span
