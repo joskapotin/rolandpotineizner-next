@@ -12,7 +12,7 @@ function PaintingDetails({ painting }: Props) {
     <>
       <Image
         alt={title}
-        src={`${PATH.PAINTINGS.SOURCE}/${filename}`}
+        src={`${PATH.PAINTINGS.NORMAL}/${filename}`}
         width={imageWidth}
         height={imageHeight}
         blurDataURL={imageBlurhash}

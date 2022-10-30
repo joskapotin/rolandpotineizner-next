@@ -13,7 +13,7 @@ export const SHEET = {
 
 export const PATH = {
   PAINTINGS: {
-    SOURCE: "/paintings/source",
+    NORMAL: "/paintings/normal",
     SQUARE: "/paintings/square",
   },
 } as const

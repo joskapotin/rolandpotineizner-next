@@ -11,7 +11,7 @@ export default function Home({
   const carouselItems = featuredPaintings.map(painting => ({
     id: painting.id,
     title: painting.title,
-    imageUrl: `${PATH.PAINTINGS.SOURCE}/${painting.filename}`,
+    imageUrl: `${PATH.PAINTINGS.NORMAL}/${painting.filename}`,
     imageWidth: painting.imageWidth,
     imageHeight: painting.imageHeight,
     imageBlurhash: painting.imageBlurhash,

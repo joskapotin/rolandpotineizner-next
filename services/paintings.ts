@@ -18,6 +18,7 @@ export interface IPainting {
   thumbWidth: number
   thumbHeight: number
   squareBlurhash: string
+  featured: boolean
 }
 
 export const getPaintings = async (): Promise<IPainting[]> => {
