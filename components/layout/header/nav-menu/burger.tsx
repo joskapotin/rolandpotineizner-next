@@ -15,17 +15,17 @@ function Burger({ isOpen, toggleIsOpen }: BurgerProps) {
       <span
         className={`${
           isOpen ? "translate-y-3 rotate-45" : "translate-y-0 rotate-0"
-        } my-2 block h-1 rounded bg-gray-400 transition-transform duration-300`}
+        } my-2 block h-[2px] rounded bg-gray-400 transition-transform duration-300`}
       />
       <span
         className={`${
           isOpen ? "opacity-0" : "opacity-100"
-        } my-2 block h-1 rounded bg-gray-400 transition-opacity duration-300`}
+        } my-2 block h-[2px] rounded bg-gray-400 transition-opacity duration-300`}
       />
       <span
         className={`${
           isOpen ? "-translate-y-3 -rotate-45" : "translate-y-0 rotate-0"
-        } my-2 block h-1 rounded bg-gray-400 transition-transform duration-300`}
+        } my-2 block h-[2px] rounded bg-gray-400 transition-transform duration-300`}
       />
     </button>
   )
