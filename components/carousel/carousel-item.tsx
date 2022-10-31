@@ -27,7 +27,7 @@ function CarouselItem({ item, index, currentIndex }: CarouselItemProps) {
       title={item.title}
       className={`
         ${isCurrent ? "opacity-100" : "pointer-events-none opacity-0"} 
-        col-span-full row-span-full transition-opacity duration-500 ease-in`}
+        col-span-full row-span-full transition-opacity duration-1000 ease-in-out`}
       blurDataURL={item.imageBlurhash}
       placeholder="blur"
     />
