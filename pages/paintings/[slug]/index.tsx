@@ -1,5 +1,5 @@
 import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next/types"
-import { ParsedUrlQuery } from "querystring"
+import type { ParsedUrlQuery } from "querystring"
 import PaintingDetails from "../../../components/painting/painting-details"
 import PaintingListItem from "../../../components/painting/painting-list-item"
 import { getPaintings } from "../../../services/paintings"
