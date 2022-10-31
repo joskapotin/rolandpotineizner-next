@@ -20,6 +20,8 @@ function RootLayout({ children }: props) {
         <meta property="og:description" content="Présentation des oeuvres de Roland Potin Eizner" />
         <meta property="og:title" content="Roland Potin Eizner | Artiste peintre" />
         <meta property="og:type" content="website" />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
       <SkipToMainContent />
