@@ -1,3 +1,4 @@
+import Head from "next/head"
 import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next/types"
 import type { ParsedUrlQuery } from "querystring"
 import PaintingDetails from "../../../components/painting/painting-details"
@@ -15,6 +16,10 @@ function Painting({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
+      <Head>
+        <title>Roland Potin Eizner | {currentPainting.title}</title>
+      </Head>
+
       <PaintingDetails painting={currentPainting} />
 
       <nav aria-label="secondary" className="col-span-full w-full ">

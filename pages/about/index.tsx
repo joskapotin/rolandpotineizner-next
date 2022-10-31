@@ -1,3 +1,4 @@
+import Head from "next/head"
 import Image from "next/image"
 import photoRoland from "../../assets/images/roland01.jpg"
 import videoThumbnail from "../../assets/images/video-thumbnail.jpg"
@@ -8,6 +9,9 @@ import VideoPlayer from "../../components/video/player/video-player"
 function About() {
   return (
     <>
+      <Head>
+        <title>Roland Potin Eizner | Biographie</title>
+      </Head>
       <section className="flex flex-col items-center gap-20">
         <Quote>
           <p>
