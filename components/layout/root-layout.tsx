@@ -22,6 +22,11 @@ function RootLayout({ children }: props) {
         <meta property="og:type" content="website" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="google-site-verification"
+          content="VHhtS-qoUBGXUBXcSk98korjSE2QdGAXuA40bDrEn5I"
+        />
+        {/* So google knows i am the admin */}
       </Head>
 
       <SkipToMainContent />
