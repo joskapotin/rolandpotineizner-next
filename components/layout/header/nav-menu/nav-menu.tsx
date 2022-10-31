@@ -1,8 +1,8 @@
 import { ROUTES } from "../../../../constants/constants"
 import useToggle from "../../../../hooks/useToggle"
-import AboutSvg from "../../../svg/about-svg"
-import HomeSvg from "../../../svg/home-svg"
-import PaintBrushSvg from "../../../svg/paint-brush-svg"
+import AboutHeadSvg from "../../../svg/about-head-svg"
+import HomeHeadSvg from "../../../svg/home-head-svg"
+import PaintingsHeadSvg from "../../../svg/paintings-head-svg"
 import Burger from "./burger"
 import NavMenuItem from "./nav-menu-item"
 
@@ -25,7 +25,7 @@ function NavMenu() {
             url={ROUTES.HOME.URL}
             title={ROUTES.HOME.NAME}
           >
-            <HomeSvg />
+            <HomeHeadSvg />
           </NavMenuItem>
         </li>
         <li>
@@ -35,7 +35,7 @@ function NavMenu() {
             url={ROUTES.ABOUT.URL}
             title={ROUTES.ABOUT.NAME}
           >
-            <AboutSvg />
+            <AboutHeadSvg />
           </NavMenuItem>
         </li>
         <li>
@@ -45,7 +45,7 @@ function NavMenu() {
             url={ROUTES.PAINTINGS.URL}
             title={ROUTES.PAINTINGS.NAME}
           >
-            <PaintBrushSvg />
+            <PaintingsHeadSvg />
           </NavMenuItem>
         </li>
       </ul>
