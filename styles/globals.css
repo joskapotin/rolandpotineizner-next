@@ -5,11 +5,15 @@
 @layer base {
   @font-face {
     font-family: "Daniel";
+    font-style: normal;
     src: url("../assets/fonts/daniel.ttf");
+    font-display: swap;
   }
   @font-face {
     font-family: "Danielbd";
+    font-style: bold;
     src: url("../assets/fonts/danielbd.ttf");
+    font-display: swap;
   }
   html {
     @apply flex min-h-full flex-col;

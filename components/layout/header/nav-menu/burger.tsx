@@ -8,8 +8,6 @@ function Burger({ isOpen, toggleIsOpen }: BurgerProps) {
     <button
       title={isOpen ? "Close the menu" : "Open the menu"}
       type="button"
-      aria-label="Menu"
-      aria-controls="navigation"
       onClick={toggleIsOpen}
       className="relative z-10 h-10 w-10 text-gray-900 sm:hidden"
     >
