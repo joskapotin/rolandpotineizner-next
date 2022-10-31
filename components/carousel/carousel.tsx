@@ -25,12 +25,12 @@ function Carousel({ items }: Props) {
         const nextIndex = (currentIndex + 1) % items.length
         handleClick(nextIndex)
       }
-    }, 3000)
+    }, 9000)
     return () => clearTimeout(timeout)
   }, [isPlaying, currentIndex, handleClick, items.length])
 
   return (
-    <section className="max-w-md flex flex-col gap-4">
+    <section className="flex max-w-md flex-col gap-4">
       <div className="flex flex-wrap justify-center gap-3">
         {items.map((item, index) => (
           <CarouselDot
@@ -49,12 +49,7 @@ function Carousel({ items }: Props) {
         onMouseLeave={() => setIsPlaying(true)}
       >
         {items.map((item, index) => (
-          <CarouselItem
-            key={item.id}
-            item={item}
-            index={index}
-            currentIndex={currentIndex}
-          />
+          <CarouselItem key={item.id} item={item} index={index} currentIndex={currentIndex} />
         ))}
       </div>
     </section>
