@@ -8,7 +8,7 @@ module.exports = {
         danielbd: ["Danielbd", "cursive"],
       },
       gridTemplateColumns: {
-        autofill: "repeat(auto-fill, minmax(180px, 1fr))",
+        autofill: "repeat(auto-fill, minmax(10rem, 1fr))",
       },
     },
   },
