@@ -1,13 +1,16 @@
 function ArrowNextSvg() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.197 9.24">
-      <path
-        strokeWidth=".265"
-        d="M77.244 84.524q0 .242-.769.825-.26.198-1.004.75-.658.713-1.545 1.65l-.905.955q-.118.124-.118.396l-.111-.068h-.64q-.105-.093-.105-.353 0-.298.199-.509.112-.118 2.01-1.879 1.71-1.587 1.71-1.717 0-.112-.638-.757l-.763-.788q-.31-.44-.998-1.308l-.732-.75q-.62-.627-.62-.707 0-.137.161-.267.161-.136.316-.136.348 0 .794.552.18.235.645.824.633.782 1.073 1.228.068.062 1.104 1.067.936.905.936.992z"
-        aria-label="Previous"
-        fill="currentColor"
-        transform="translate(-72.047 -79.86)"
-      />
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 342.43 201.741" aria-label="Next painting">
+      <g
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        transform="translate(-252.69 171.162)"
+      >
+        <circle cx="-353.56" cy="-70.291" r="98.349" stroke-width="5.043" transform="scale(-1 1)" />
+        <path stroke-width="4.977" d="m495.565-168.674 97.067 98.383-97.067 98.382" />
+      </g>
     </svg>
   )
 }

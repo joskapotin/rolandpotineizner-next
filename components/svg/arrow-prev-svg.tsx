@@ -1,13 +1,23 @@
 function ArrowPrevSvg() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5.265 8.756">
-      <path
-        strokeWidth=".265"
-        d="M80.175 76.942q-.012 0-2.114 1.917-2.115 1.928-2.115 2.145 0 .186.428.627l.57.582q.49.67 1.495 1.91.186.124.54.41v.44q-.298.167-.596.167-.353 0-.874-.762-.192-.304-.707-1.08-.322-.477-1.21-1.302l-.483-.465q-.198-.198-.198-.446 0-.57 4.892-4.7.087.043.23.254.142.21.142.303z"
-        aria-label="Previous"
-        fill="currentColor"
-        transform="translate(-74.91 -76.384)"
-      />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 342.431 201.741"
+      aria-label="Previous painting"
+    >
+      <g
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        transform="translate(-252.69 171.162)"
+      >
+        <circle cx="494.249" cy="-70.291" r="98.349" stroke-width="5.043" />
+        <path
+          stroke-width="4.977"
+          d="M352.244-168.674 255.178-70.29l97.066 98.382M495.05-70.29H255.178"
+        />
+      </g>
     </svg>
   )
 }

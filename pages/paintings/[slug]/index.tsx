@@ -1,8 +1,11 @@
 import Head from "next/head"
+import Link from "next/link"
 import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next/types"
 import type { ParsedUrlQuery } from "querystring"
 import PaintingDetails from "../../../components/painting/painting-details"
-import PaintingListItem from "../../../components/painting/painting-list-item"
+import ArrowNextSvg from "../../../components/svg/arrow-next-svg"
+import ArrowPrevSvg from "../../../components/svg/arrow-prev-svg"
+import { ROUTES } from "../../../constants/constants"
 import { getPaintings } from "../../../services/paintings"
 
 interface IParams extends ParsedUrlQuery {
@@ -25,10 +28,24 @@ function Painting({
       <nav aria-label="secondary" className="col-span-full w-full ">
         <ul className="relative flex justify-evenly gap-2">
           <li className="min-w-[8rem] max-w-[12rem] flex-grow ">
-            <PaintingListItem painting={prevPainting} />
+            <Link
+              href={`${ROUTES.PAINTINGS.URL}/${prevPainting.slug}`}
+              className="opacity-60 transition-opacity duration-300 ease-in-out hover:opacity-100"
+              title={`Voir le tableau "${prevPainting.title}"`}
+            >
+              <ArrowPrevSvg />
+              <span className="sr-only">Voir ${prevPainting.title}</span>
+            </Link>
           </li>
           <li className="min-w-[8rem] max-w-[12rem] flex-grow ">
-            <PaintingListItem painting={nextPainting} />
+            <Link
+              href={`${ROUTES.PAINTINGS.URL}/${nextPainting.slug}`}
+              className="opacity-60 transition-opacity duration-300 ease-in-out hover:opacity-100"
+              title={`Voir le tableau "${nextPainting.title}"`}
+            >
+              <ArrowNextSvg />
+              <span className="sr-only">Voir ${nextPainting.title}</span>
+            </Link>
           </li>
         </ul>
       </nav>
