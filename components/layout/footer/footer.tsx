@@ -35,10 +35,10 @@ function Footer() {
     <footer className="container mx-auto flex flex-col items-center gap-24 py-40 md:flex md:w-full md:flex-row md:flex-wrap md:items-start md:justify-around md:gap-12 md:text-start">
       <section>
         <h4 className="mb-4 tracking-widest text-amber-900">Mes amis</h4>
-        <ul className="flex flex-col gap-3">
+        <ul className="flex flex-col gap-3 text-gray-600">
           {friends.map(friend => (
-            <li key={friend.url} className="flex items-center gap-2">
-              <i className="text-gray-400">
+            <li key={friend.url} className="flex items-center gap-2 hover:text-gray-900">
+              <i>
                 <ExternalLinkSvg />
               </i>
               <a
@@ -56,17 +56,17 @@ function Footer() {
       </section>
       <section>
         <h4 className="mb-4 tracking-widest text-amber-900">Pour me contacter</h4>
-        <ul className="flex flex-col gap-3">
-          <li className="flex gap-2">
-            <i className="text-gray-400">
+        <ul className="flex flex-col gap-3 text-gray-600">
+          <li className="flex gap-2 hover:text-gray-900">
+            <i>
               <PhoneSvg />
             </i>
             <a href="tel:+33660835318" className="link" title="Pour m'appeller directement">
               +33 6 60 83 53 18
             </a>
           </li>
-          <li className="flex gap-2">
-            <i className="text-gray-400">
+          <li className="flex gap-2 hover:text-gray-900">
+            <i>
               <MailSvg />
             </i>
             <a
@@ -81,9 +81,9 @@ function Footer() {
       </section>
       <section>
         <h4 className="mb-4 tracking-widest text-amber-900">Conception et réalisation</h4>
-        <ul className="flex flex-col gap-3">
-          <li className="flex gap-2">
-            <i className="text-gray-400">
+        <ul className="flex flex-col gap-3 text-gray-600">
+          <li className="flex gap-2 hover:text-gray-900">
+            <i>
               <GitHubLogoSvg />
             </i>
             <a
