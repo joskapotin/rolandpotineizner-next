@@ -3,8 +3,8 @@ import Link from "next/link"
 import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next/types"
 import type { ParsedUrlQuery } from "querystring"
 import PaintingDetails from "../../../components/painting/painting-details"
-import ArrowNextSvg from "../../../components/svg/arrow-next-svg"
-import ArrowPrevSvg from "../../../components/svg/arrow-prev-svg"
+import NextHeadSvg from "../../../components/svg/next-head-svg"
+import PreviousHeadSvg from "../../../components/svg/previous-head-svg"
 import { ROUTES } from "../../../constants/constants"
 import { getPaintings } from "../../../services/paintings"
 
@@ -25,29 +25,27 @@ function Painting({
 
       <PaintingDetails painting={currentPainting} />
 
-      <nav aria-label="secondary" className="col-span-full w-full ">
-        <ul className="relative flex justify-evenly gap-2">
-          <li className="min-w-[8rem] max-w-[12rem] flex-grow ">
-            <Link
-              href={`${ROUTES.PAINTINGS.URL}/${prevPainting.slug}`}
-              className="opacity-60 transition-opacity duration-300 ease-in-out hover:opacity-100"
-              title={`Voir le tableau "${prevPainting.title}"`}
-            >
-              <ArrowPrevSvg />
-              <span className="sr-only">Voir ${prevPainting.title}</span>
-            </Link>
-          </li>
-          <li className="min-w-[8rem] max-w-[12rem] flex-grow ">
-            <Link
-              href={`${ROUTES.PAINTINGS.URL}/${nextPainting.slug}`}
-              className="opacity-60 transition-opacity duration-300 ease-in-out hover:opacity-100"
-              title={`Voir le tableau "${nextPainting.title}"`}
-            >
-              <ArrowNextSvg />
-              <span className="sr-only">Voir ${nextPainting.title}</span>
-            </Link>
-          </li>
-        </ul>
+      <nav className="col-span-full flex justify-evenly">
+        <Link
+          href={`${ROUTES.PAINTINGS.URL}/${prevPainting.slug}`}
+          className="text-gray-400 opacity-60 transition-opacity duration-300 ease-in-out hover:opacity-100"
+          title={`Voir le tableau "${prevPainting.title}"`}
+        >
+          <i className="block w-20 p-2 transition-colors duration-300 ease-in-out hover:text-gray-900 sm:w-24">
+            <PreviousHeadSvg />
+          </i>
+          <span className="sr-only">Voir ${prevPainting.title}</span>
+        </Link>
+        <Link
+          href={`${ROUTES.PAINTINGS.URL}/${nextPainting.slug}`}
+          className="text-gray-400 opacity-60 transition-opacity duration-300 ease-in-out hover:opacity-100"
+          title={`Voir le tableau "${nextPainting.title}"`}
+        >
+          <i className="block w-20 p-2 transition-colors duration-300 ease-in-out hover:text-gray-900 sm:w-24">
+            <NextHeadSvg />
+          </i>
+          <span className="sr-only">Voir ${nextPainting.title}</span>
+        </Link>
       </nav>
     </>
   )
