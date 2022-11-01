@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 import { formatDuration } from "../../../helpers/formatters"
 import { getXPositionInPercent } from "../../../helpers/math"
-import "./styles.module.css"
+import styles from "./styles.module.css"
 import VolumeControl from "./volume-control"
 
 type VideoPlayerProps = {
@@ -51,6 +51,7 @@ function VideoPlayer({ url, thumbnail }: VideoPlayerProps) {
         element: timelineRef.current,
         mouseX: event.clientX,
       })
+      console.log(percent)
       timelineRef.current.style.setProperty("--preview-position", percent.toString())
     }
   }
@@ -167,7 +168,9 @@ function VideoPlayer({ url, thumbnail }: VideoPlayerProps) {
           onClick={handleJumTo}
           onKeyDown={handleTimelineKeyboard}
         >
-          <div className="timeline relative h-1 w-full bg-gray-400/50 before:absolute before:left-0 before:top-0 before:bottom-0 before:hidden before:bg-gray-400 before:content-[''] after:absolute after:left-0 after:top-0 after:bottom-0 after:bg-red-600 after:content-[''] group-hover/timeline:before:block" />
+          <div
+            className={`${styles.timeline} relative h-1 w-full bg-gray-400/50 before:absolute before:left-0 before:top-0 before:bottom-0 before:hidden before:bg-gray-400 before:content-[''] after:absolute after:left-0 after:top-0 after:bottom-0 after:bg-red-600 after:content-[''] group-hover/timeline:before:block`}
+          />
         </button>
 
         <div className="flex items-center gap-2 bg-gray-50/80 p-1 ">
