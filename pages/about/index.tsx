@@ -31,7 +31,7 @@ function About() {
           </p>
           <p>
             Un jour, je pénètre dans l’appartement puis le château du collectionneur Henri-Pierre
-            Roché, et là, merveille, je fais des rencontres extraordinaires : des tableaux, des
+            Roché, et là, merveille, je fais des rencontres extraordinaires: des tableaux, des
             sculptures, des objets multiples me font face, s’animent et me parlent. Ces jours là je
             parle avec eux, complice et joyeux, je suis dans mon monde.
           </p>
