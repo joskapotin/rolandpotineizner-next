@@ -20,7 +20,7 @@ function Painting({
   return (
     <>
       <Head>
-        <title>Roland Potin Eizner | {currentPainting.title}</title>
+        <title>{`Roland Potin Eizner | ${currentPainting.title}`}</title>
       </Head>
 
       <PaintingDetails painting={currentPainting} />

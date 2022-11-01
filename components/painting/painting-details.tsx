@@ -17,6 +17,7 @@ function PaintingDetails({ painting }: Props) {
         height={imageHeight}
         blurDataURL={imageBlurhash}
         placeholder="blur"
+        priority
       />
 
       <ul className="self-center text-center lg:text-start">

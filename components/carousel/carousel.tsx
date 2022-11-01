@@ -49,7 +49,13 @@ function Carousel({ items }: Props) {
         onMouseLeave={() => setIsPlaying(true)}
       >
         {items.map((item, index) => (
-          <CarouselItem key={item.id} item={item} index={index} currentIndex={currentIndex} />
+          <CarouselItem
+            key={item.id}
+            item={item}
+            index={index}
+            currentIndex={currentIndex}
+            priority={index < 5 ? true : false}
+          />
         ))}
       </div>
     </section>

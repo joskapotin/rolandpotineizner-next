@@ -13,9 +13,10 @@ type CarouselItemProps = {
   item: CarouselItemType
   index: number
   currentIndex: number
+  priority: boolean
 }
 
-function CarouselItem({ item, index, currentIndex }: CarouselItemProps) {
+function CarouselItem({ item, index, currentIndex, priority = false }: CarouselItemProps) {
   const isCurrent = index === currentIndex
 
   return (
@@ -30,6 +31,7 @@ function CarouselItem({ item, index, currentIndex }: CarouselItemProps) {
         col-span-full row-span-full transition-opacity duration-1000 ease-in-out`}
       blurDataURL={item.imageBlurhash}
       placeholder="blur"
+      priority={priority}
     />
   )
 }

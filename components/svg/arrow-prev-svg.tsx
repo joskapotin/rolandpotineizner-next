@@ -8,13 +8,13 @@ function ArrowPrevSvg() {
       <g
         fill="none"
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         transform="translate(-252.69 171.162)"
       >
-        <circle cx="494.249" cy="-70.291" r="98.349" stroke-width="5.043" />
+        <circle cx="494.249" cy="-70.291" r="98.349" strokeWidth="5.043" />
         <path
-          stroke-width="4.977"
+          strokeWidth="4.977"
           d="M352.244-168.674 255.178-70.29l97.066 98.382M495.05-70.29H255.178"
         />
       </g>

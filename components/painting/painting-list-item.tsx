@@ -5,9 +5,10 @@ import type { IPainting } from "../../services/paintings"
 
 type props = {
   painting: IPainting
+  priority?: boolean
 }
 
-function PaintingListItem({ painting }: props) {
+function PaintingListItem({ painting, priority = false }: props) {
   const { title, filename, slug, squareBlurhash } = painting
   const imageSrc = `${PATH.PAINTINGS.SQUARE}/${filename}`
 
@@ -25,6 +26,7 @@ function PaintingListItem({ painting }: props) {
         className="w-full overflow-hidden rounded-full border-4 border-gray-100 object-cover object-center shadow-2xl"
         blurDataURL={squareBlurhash}
         placeholder="blur"
+        priority={priority}
       />
       <span className="sr-only">Voir ${title}</span>
     </Link>

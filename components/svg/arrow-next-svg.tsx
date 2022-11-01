@@ -4,12 +4,12 @@ function ArrowNextSvg() {
       <g
         fill="none"
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         transform="translate(-252.69 171.162)"
       >
-        <circle cx="-353.56" cy="-70.291" r="98.349" stroke-width="5.043" transform="scale(-1 1)" />
-        <path stroke-width="4.977" d="m495.565-168.674 97.067 98.383-97.067 98.382" />
+        <circle cx="-353.56" cy="-70.291" r="98.349" strokeWidth="5.043" transform="scale(-1 1)" />
+        <path strokeWidth="4.977" d="m495.565-168.674 97.067 98.383-97.067 98.382" />
       </g>
     </svg>
   )

@@ -12,6 +12,7 @@ function About() {
       <Head>
         <title>Roland Potin Eizner | Biographie</title>
       </Head>
+
       <section className="flex flex-col items-center gap-20">
         <Quote>
           <p>
@@ -41,6 +42,8 @@ function About() {
           src={photoRoland}
           alt="Roland souriant devant des tableaux"
           className="aspect-square overflow-hidden rounded-full border-4 border-gray-100 object-cover object-center shadow-2xl"
+          placeholder="blur"
+          priority
         />
 
         <Quote>
