@@ -38,7 +38,7 @@ function Footer() {
         <ul className="flex flex-col gap-3">
           {friends.map(friend => (
             <li key={friend.url} className="flex items-center gap-2">
-              <i>
+              <i className="text-gray-400">
                 <ExternalLinkSvg />
               </i>
               <a
@@ -58,7 +58,7 @@ function Footer() {
         <h4 className="mb-4 tracking-widest text-amber-900">Pour me contacter</h4>
         <ul className="flex flex-col gap-3">
           <li className="flex gap-2">
-            <i>
+            <i className="text-gray-400">
               <PhoneSvg />
             </i>
             <a href="tel:+33660835318" className="link" title="Pour m'appeller directement">
@@ -66,7 +66,7 @@ function Footer() {
             </a>
           </li>
           <li className="flex gap-2">
-            <i>
+            <i className="text-gray-400">
               <MailSvg />
             </i>
             <a
@@ -83,7 +83,7 @@ function Footer() {
         <h4 className="mb-4 tracking-widest text-amber-900">Conception et réalisation</h4>
         <ul className="flex flex-col gap-3">
           <li className="flex gap-2">
-            <i>
+            <i className="text-gray-400">
               <GitHubLogoSvg />
             </i>
             <a
