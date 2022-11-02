@@ -22,7 +22,7 @@ function NavMenuItem({ children, isOpen, toggleIsOpen, url, title }: Props) {
       href={url}
       onClick={toggleIsOpen}
     >
-      <i className="mx-auto block w-20 p-2 sm:w-12 md:w-14 lg:w-16">{children}</i>
+      <i className="mx-auto block w-20 p-2 sm:w-14 md:w-16 lg:w-20">{children}</i>
       <span className="sr-only">{title}</span>
     </Link>
   )

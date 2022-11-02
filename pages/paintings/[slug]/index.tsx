@@ -25,23 +25,23 @@ function Painting({
 
       <PaintingDetails painting={currentPainting} />
 
-      <nav className="col-span-full flex justify-evenly">
+      <nav className="col-span-full flex justify-evenly gap-4 md:gap-5 lg:gap-6 xl:gap-8 2xl:gap-10">
         <Link
           href={`${ROUTES.PAINTINGS.URL}/${prevPainting.slug}`}
-          className="text-gray-400 opacity-60 transition-opacity duration-300 ease-in-out hover:opacity-100"
+          className="text-gray-400 transition-colors duration-300 ease-in-out hover:text-gray-900"
           title={`Voir le tableau "${prevPainting.title}"`}
         >
-          <i className="block w-20 p-2 transition-colors duration-300 ease-in-out hover:text-gray-900 sm:w-24">
+          <i className="block w-20 p-2 lg:w-24">
             <PreviousHeadSvg />
           </i>
           <span className="sr-only">Voir ${prevPainting.title}</span>
         </Link>
         <Link
           href={`${ROUTES.PAINTINGS.URL}/${nextPainting.slug}`}
-          className="text-gray-400 opacity-60 transition-opacity duration-300 ease-in-out hover:opacity-100"
+          className="text-gray-400 transition-colors duration-300 ease-in-out hover:text-gray-900"
           title={`Voir le tableau "${nextPainting.title}"`}
         >
-          <i className="block w-20 p-2 transition-colors duration-300 ease-in-out hover:text-gray-900 sm:w-24">
+          <i className="block w-20 p-2 lg:w-24">
             <NextHeadSvg />
           </i>
           <span className="sr-only">Voir ${nextPainting.title}</span>

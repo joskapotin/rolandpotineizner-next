@@ -25,7 +25,7 @@ function Footer() {
       },
       {
         title: "Jean-Claude Riedel",
-        url: "http://jeanclauderiedel.com",
+        url: "https://www.worldcat.org/identities/viaf-159203900/",
       },
     ],
     []

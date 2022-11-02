@@ -20,7 +20,7 @@ function PaintingDetails({ painting }: Props) {
         priority
       />
 
-      <div className="flex flex-col items-center self-center text-center lg:text-start">
+      <div className="self-center text-center">
         <h1 className="mb-8 text-4xl">{title}</h1>
         <ul>
           <li>
