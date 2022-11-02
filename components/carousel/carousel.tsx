@@ -31,7 +31,7 @@ function Carousel({ items }: Props) {
 
   return (
     <section className="flex max-w-md flex-col gap-4">
-      <div className="flex flex-wrap justify-center gap-3">
+      <div className="mt-2 mb-4 flex flex-wrap justify-center gap-3">
         {items.map((item, index) => (
           <CarouselDot
             key={item.id}
