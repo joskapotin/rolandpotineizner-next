@@ -28,7 +28,7 @@ function Painting({
       <nav className="col-span-full flex justify-evenly gap-4 md:gap-5 lg:gap-6 xl:gap-8 2xl:gap-10">
         <Link
           href={`${ROUTES.PAINTINGS.URL}/${prevPainting.slug}`}
-          className="text-gray-400 transition-colors duration-300 ease-in-out hover:text-gray-900"
+          className="text-gray-400 transition-colors duration-300 ease-in-out hover:text-gray-900 active:-translate-x-1"
           title={`Voir le tableau "${prevPainting.title}"`}
         >
           <i className="block w-20 p-2 lg:w-24">
@@ -38,7 +38,7 @@ function Painting({
         </Link>
         <Link
           href={`${ROUTES.PAINTINGS.URL}/${nextPainting.slug}`}
-          className="text-gray-400 transition-colors duration-300 ease-in-out hover:text-gray-900"
+          className="text-gray-400 transition-colors duration-300 ease-in-out hover:text-gray-900 active:translate-x-1"
           title={`Voir le tableau "${nextPainting.title}"`}
         >
           <i className="block w-20 p-2 lg:w-24">
