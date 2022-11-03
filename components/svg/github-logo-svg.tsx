@@ -4,7 +4,6 @@ function GitHubLogoSvg() {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 42.607 41.555"
       fill="currentColor"
-      className="h-6 w-6"
       aria-label="github icon"
     >
       <path
