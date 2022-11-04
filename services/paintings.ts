@@ -15,8 +15,8 @@ export interface IPainting {
   imageBlurhash: string
   imageWidth: number
   imageHeight: number
-  thumbWidth: number
-  thumbHeight: number
+  thumbnailWidth: number
+  thumbnailHeight: number
   squareBlurhash: string
   featured: boolean
 }

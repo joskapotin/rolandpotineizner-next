@@ -48,6 +48,11 @@ function NavMenu() {
             <PaintingsHeadSvg />
           </NavMenuItem>
         </li>
+        {/* <li>
+          <NavMenuItem isOpen={isOpen} toggleIsOpen={toggleIsOpen} url="/test" title="test">
+            Test
+          </NavMenuItem>
+        </li> */}
       </ul>
     </nav>
   )

@@ -56,5 +56,6 @@ export const getStaticProps = async () => {
     props: {
       featuredPaintings,
     },
+    revalidate: 3600,
   }
 }

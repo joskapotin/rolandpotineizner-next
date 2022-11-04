@@ -78,5 +78,6 @@ export const getStaticProps: GetStaticProps = async context => {
       currentPainting: paintings.at(currentPaintingIndex),
       nextPainting: paintings.at((currentPaintingIndex + 1) % paintings.length),
     },
+    revalidate: 3600,
   }
 }
