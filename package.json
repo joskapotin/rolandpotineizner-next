@@ -14,6 +14,7 @@
     "format": "npm run prettier:fix && npm run lint:fix"
   },
   "dependencies": {
+    "framer-motion": "^7.6.4",
     "next": "13.0.0",
     "next-sitemap": "^3.1.30",
     "react": "18.2.0",

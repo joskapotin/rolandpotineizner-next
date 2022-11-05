@@ -7,7 +7,7 @@ type props = {
 
 function PaintingList({ paintings }: props) {
   return (
-    <ul className="grid grid-cols-autofill gap-4">
+    <ul className="grid w-full grid-cols-autofill gap-4">
       {paintings.map((painting: IPainting, index) => (
         <li key={painting.id}>
           <PaintingListItem painting={painting} priority={index < 20} />

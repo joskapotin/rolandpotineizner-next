@@ -1,4 +1,6 @@
+import { AnimatePresence, motion } from "framer-motion"
 import Head from "next/head"
+import { useRouter } from "next/router"
 import type { ReactNode } from "react"
 import photoRoland from "../../assets/images/roland01.jpg"
 import SkipToMainContent from "../skip-to-main-content/skip-to-main-content"
@@ -9,7 +11,15 @@ type props = {
   children: ReactNode
 }
 
+const variants = {
+  hidden: { opacity: 0 },
+  enter: { opacity: 1 },
+  exit: { opacity: 0 },
+}
+
 function RootLayout({ children }: props) {
+  const { asPath } = useRouter()
+
   return (
     <>
       <Head>
@@ -40,13 +50,24 @@ function RootLayout({ children }: props) {
       </Head>
 
       <SkipToMainContent />
+
       <Header />
-      <main
-        id="main-content"
-        className="container mx-auto grid flex-grow content-start justify-items-center gap-y-24 px-2 sm:px-0 md:grid-cols-2 md:gap-x-6 lg:gap-x-7 xl:gap-x-8 2xl:gap-x-9"
-      >
-        {children}
-      </main>
+
+      <AnimatePresence initial={false} mode="wait">
+        <motion.main
+          key={asPath}
+          variants={variants} // Pass the variant object into Framer Motion
+          initial="hidden" // Set the initial state to variants.hidden
+          animate="enter" // Animated state to variants.enter
+          exit="exit" // Exit state (used later) to variants.exit
+          transition={{ type: "linear", duration: 0.3 }} // Set the transition to linear
+          id="main-content"
+          className="container mx-auto grid flex-grow content-start justify-items-center gap-y-24 px-2 sm:px-0 md:grid-cols-2 md:gap-x-6 lg:gap-x-7 xl:gap-x-8 2xl:gap-x-9"
+        >
+          {children}
+        </motion.main>
+      </AnimatePresence>
+
       <Footer />
     </>
   )
