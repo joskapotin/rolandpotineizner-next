@@ -34,47 +34,67 @@ function Test({ paintings }: InferGetServerSidePropsType<typeof getServerSidePro
 
   return (
     <div className="col-span-full">
-      <table className="table-auto">
-        <thead>
-          <tr>
-            {labels.map(label => {
-              if (hiddenLabels.includes(label))
-                return (
-                  <th key={label} className="hidden">
-                    {label}
-                  </th>
-                )
-              return <th key={label}>{label}</th>
-            })}
-          </tr>
-        </thead>
-        <tbody>
-          {paintings.map(painting => (
-            <tr key={painting.id}>
-              {labels.map(prop => {
-                const value = painting[prop]
-                if (hiddenLabels.includes(prop))
-                  return (
-                    <td key={`${painting.id}-${prop}`} className="hidden">
-                      {value}
-                    </td>
-                  )
+      <div className="grid grid-cols-7 gap-3">
+        {labels.map(label => {
+          const isHidden = hiddenLabels.includes(label)
+          return (
+            <span key={label} className={`${isHidden ? "hidden" : "flex flex-grow"}`}>
+              {label}
+            </span>
+          )
+        })}
+      </div>
 
+      <ul className="mt-4 flex flex-col gap-3">
+        {paintings.map(painting => (
+          <li key={painting.id}>
+            <form className="grid grid-cols-7 gap-3">
+              {labels.map(label => {
+                const value = painting[label]
+                const isHidden = hiddenLabels.includes(label)
                 return (
-                  <td key={`${painting.id}-${prop}`}>
-                    <label>
-                      {prop}
-                      {typeof value === "boolean" && <input type="checkbox" checked={value} />}
-                      {typeof value === "number" && <input type="number" value={value} />}
-                      {typeof value === "string" && <input type="text" value={value} />}
-                    </label>
-                  </td>
+                  <label
+                    key={`${painting.id}-${label}`}
+                    className={`${isHidden ? "hidden" : "flex"}`}
+                  >
+                    <span className="sr-only">{label}</span>
+                    {typeof value === "boolean" && (
+                      <input
+                        hidden={isHidden}
+                        readOnly={isHidden}
+                        type="checkbox"
+                        checked={value}
+                        className="w-full"
+                        name={`${painting.slug}-${label}`}
+                      />
+                    )}
+                    {typeof value === "number" && (
+                      <input
+                        hidden={isHidden}
+                        readOnly={isHidden}
+                        type="number"
+                        value={value}
+                        className="w-full"
+                        name={`${painting.slug}-${label}`}
+                      />
+                    )}
+                    {typeof value === "string" && (
+                      <input
+                        hidden={isHidden}
+                        readOnly={isHidden}
+                        type="text"
+                        value={value}
+                        className="w-full"
+                        name={`${painting.slug}-${label}`}
+                      />
+                    )}
+                  </label>
                 )
               })}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+            </form>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
