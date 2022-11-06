@@ -3,43 +3,43 @@
 @tailwind utilities;
 
 @layer base {
-  @font-face {
-    font-family: "Daniel";
-    font-style: normal;
-    src: url("../assets/fonts/daniel.ttf");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Danielbd";
-    font-style: bold;
-    src: url("../assets/fonts/danielbd.ttf");
-    font-display: swap;
-  }
-  html {
-    @apply flex min-h-full flex-col;
-  }
-  body {
-    @apply flex min-h-full flex-grow flex-col bg-gray-50 text-gray-900;
-  }
-  #__next {
-    @apply flex min-h-full flex-grow flex-col gap-3 sm:gap-6 md:gap-12 lg:gap-24;
-  }
-  h1 {
-    @apply text-xl;
-  }
-  h2 {
-    @apply text-lg;
-  }
-  p + p {
-    @apply mt-8;
-  }
-  a:active {
-    @apply translate-y-1 transition-transform duration-75 ease-linear;
-  }
-  .link {
-    @apply relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:origin-bottom-left after:scale-x-100 after:bg-gray-900 after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-right hover:after:scale-x-0;
-  }
-  nav [aria-current="page"] i {
-    @apply text-gray-900;
-  }
+	@font-face {
+		font-family: "Daniel";
+		font-style: normal;
+		src: url("../assets/fonts/daniel.ttf");
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "Danielbd";
+		font-style: bold;
+		src: url("../assets/fonts/danielbd.ttf");
+		font-display: swap;
+	}
+	html {
+		@apply flex min-h-full flex-col;
+	}
+	body {
+		@apply flex min-h-full flex-grow flex-col bg-gray-50 text-gray-900;
+	}
+	#__next {
+		@apply flex min-h-full flex-grow flex-col gap-3 sm:gap-6 md:gap-12 lg:gap-24;
+	}
+	h1 {
+		@apply text-xl;
+	}
+	h2 {
+		@apply text-lg;
+	}
+	p + p {
+		@apply mt-8;
+	}
+	a:active {
+		@apply translate-y-1 transition-transform duration-75 ease-linear;
+	}
+	.link {
+		@apply relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:origin-bottom-left after:scale-x-100 after:bg-gray-900 after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-right hover:after:scale-x-0;
+	}
+	nav [aria-current="page"] i {
+		@apply text-gray-900;
+	}
 }
