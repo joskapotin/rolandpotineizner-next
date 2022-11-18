@@ -14,18 +14,18 @@ function Burger({ isOpen, toggleIsOpen }: BurgerProps) {
       <span className="sr-only">{isOpen ? "Close menu" : "Open menu"}</span>
       <span
         className={`${
-          isOpen ? "translate-y-3 rotate-45" : "translate-y-0 rotate-0"
-        } my-2 block h-[2px] rounded bg-gray-400 transition-transform duration-300`}
+          isOpen ? "translate-y-2" : "-translate-y-[1px]"
+        } my-2 block h-[3px] rounded bg-gray-400 transition-transform duration-300`}
       />
       <span
         className={`${
-          isOpen ? "opacity-0" : "opacity-100"
-        } my-2 block h-[2px] rounded bg-gray-400 transition-opacity duration-300`}
+          isOpen ? "-translate-x-full opacity-0" : "-translate-0 opacity-100"
+        } my-2 block h-[3px] rounded bg-gray-400 transition-[opacity,transform] duration-300`}
       />
       <span
         className={`${
-          isOpen ? "-translate-y-3 -rotate-45" : "translate-y-0 rotate-0"
-        } my-2 block h-[2px] rounded bg-gray-400 transition-transform duration-300`}
+          isOpen ? "-translate-y-2" : "translate-y-[1px]"
+        } my-2 block h-[3px] rounded bg-gray-400 transition-transform duration-300`}
       />
     </button>
   )
