@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
+import useSwipe from "../../hooks/useSwipe"
 import CarouselDot from "./carousel-dot"
 import type { CarouselItemType } from "./carousel-item"
 import CarouselItem from "./carousel-item"
@@ -10,8 +11,13 @@ type Props = {
 function Carousel({ items }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
+
   const carouselRef = useRef<HTMLDivElement>(null)
 
+  const prevIndex = useMemo(() => (currentIndex - 1) % items.length, [currentIndex, items.length])
+  const nextIndex = useMemo(() => (currentIndex + 1) % items.length, [currentIndex, items.length])
+
+  // Click
   const handleClick = useCallback(
     (newIndex: number) => {
       if (newIndex !== currentIndex) setCurrentIndex(newIndex)
@@ -19,15 +25,28 @@ function Carousel({ items }: Props) {
     [currentIndex]
   )
 
+  // Auto play
   useEffect(() => {
     const timeout = setTimeout(() => {
       if (isPlaying) {
-        const nextIndex = (currentIndex + 1) % items.length
         handleClick(nextIndex)
       }
     }, 9000)
     return () => clearTimeout(timeout)
-  }, [isPlaying, currentIndex, handleClick, items.length])
+  }, [isPlaying, nextIndex, handleClick])
+
+  // Swipe
+  const prev = () => {
+    setCurrentIndex(prevIndex)
+    console.log("prev")
+  }
+
+  const next = () => {
+    setCurrentIndex(nextIndex)
+    console.log("next")
+  }
+
+  const { handleTouchStart, handleTouchMove } = useSwipe({ prev, next })
 
   return (
     <section className="flex max-w-md flex-col gap-4">
@@ -47,6 +66,8 @@ function Carousel({ items }: Props) {
         ref={carouselRef}
         onMouseEnter={() => setIsPlaying(false)}
         onMouseLeave={() => setIsPlaying(true)}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
       >
         {items.map((item, index) => (
           <CarouselItem
@@ -54,7 +75,7 @@ function Carousel({ items }: Props) {
             item={item}
             index={index}
             currentIndex={currentIndex}
-            priority={index < 5 ? true : false}
+            priority={index < 5 ? true : false} // only preload 5 first
           />
         ))}
       </div>
