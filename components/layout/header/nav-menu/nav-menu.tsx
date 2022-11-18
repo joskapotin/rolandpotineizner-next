@@ -16,7 +16,7 @@ function NavMenu() {
       <ul
         className={`${
           isOpen ? "translate-x-0" : "translate-x-full"
-        }  fixed top-0 right-0 bottom-0 left-1/2 flex origin-top flex-col justify-center gap-20 bg-gray-50 text-center transition-transform duration-300 ease-in-out sm:static sm:flex sm:flex-grow sm:translate-x-0 sm:flex-row sm:justify-between sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8 2xl:gap-10`}
+        }  fixed top-0 right-0 bottom-0 left-1/2 flex origin-top flex-col justify-center gap-20 bg-gray-50 text-center transition-transform duration-300 ease-in-out dark:bg-gray-900 sm:static sm:flex sm:flex-grow sm:translate-x-0 sm:flex-row sm:justify-between sm:gap-4 md:gap-5 lg:gap-6 xl:gap-8 2xl:gap-10`}
       >
         <li>
           <NavMenuItem
