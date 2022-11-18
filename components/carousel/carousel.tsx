@@ -39,12 +39,10 @@ function Carousel({ items }: Props) {
   // Swipe
   const prev = () => {
     setCurrentIndex(prevIndex)
-    console.log("prev")
   }
 
   const next = () => {
     setCurrentIndex(nextIndex)
-    console.log("next")
   }
 
   const { handleTouchStart, handleTouchMove } = useSwipe({ prev, next })
