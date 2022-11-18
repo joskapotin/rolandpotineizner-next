@@ -27,3 +27,7 @@ export const getXPositionInPercent = ({
   const rect = element.getBoundingClientRect()
   return Math.min(Math.max(0, mouseX - rect.x), rect.width) / rect.width
 }
+
+export function modulo(n: number, m: number) {
+  return ((n % m) + m) % m
+}

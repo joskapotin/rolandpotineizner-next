@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
+import { modulo } from "../../helpers/math"
 import useSwipe from "../../hooks/useSwipe"
 import CarouselDot from "./carousel-dot"
 import type { CarouselItemType } from "./carousel-item"
@@ -14,8 +15,8 @@ function Carousel({ items }: Props) {
 
   const carouselRef = useRef<HTMLDivElement>(null)
 
-  const prevIndex = useMemo(() => (currentIndex - 1) % items.length, [currentIndex, items.length])
-  const nextIndex = useMemo(() => (currentIndex + 1) % items.length, [currentIndex, items.length])
+  const prevIndex = modulo(currentIndex - 1, items.length)
+  const nextIndex = modulo(currentIndex + 1, items.length)
 
   // Click
   const handleClick = useCallback(
