@@ -1,7 +1,7 @@
-export const getRandomNumber = (min = 0, max = 1) => {
-  const newMin = Math.ceil(min)
-  const newMax = Math.floor(max)
-  return Math.floor(Math.random() * (newMax - newMin + 1) + newMin)
+export const getRandomNumber = (min = 0, max = 100) => {
+  const roundMin = Math.floor(min)
+  const roundMax = Math.floor(max)
+  return Math.floor(Math.random() * (roundMax - roundMin + 1) + roundMin)
 }
 
 export const getRandomNumbers = (min: number, max: number, amount: number) => {
