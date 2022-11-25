@@ -39,7 +39,4 @@
   .link {
     @apply relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:origin-bottom-left after:scale-x-100 after:bg-gray-900 after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-right hover:after:scale-x-0 dark:after:bg-gray-600;
   }
-  nav [aria-current="page"] i {
-    @apply text-gray-900;
-  }
 }
