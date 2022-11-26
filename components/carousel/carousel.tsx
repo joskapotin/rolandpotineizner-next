@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
 import { modulo } from "../../helpers/math"
 import useSwipe from "../../hooks/useSwipe"
 import CarouselDot from "./carousel-dot"
@@ -13,8 +13,10 @@ function Carousel({ items }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
 
-  const prevIndex = modulo(currentIndex - 1, items.length)
-  const nextIndex = modulo(currentIndex + 1, items.length)
+  const [prevIndex, nextIndex] = useMemo(
+    () => [modulo(currentIndex - 1, items.length), modulo(currentIndex + 1, items.length)],
+    [currentIndex, items.length]
+  )
 
   // Click
   const handleClick = useCallback(

@@ -1,15 +1,15 @@
 import Head from "next/head"
 import photoRoland from "../../assets/images/roland01.jpg"
-import PageTransition from "../motion/page-transition"
 import SkipToMainContent from "../skip-to-main-content/skip-to-main-content"
 import Footer from "./footer/footer"
 import Header from "./header/header"
+import Main from "./main/main"
 
-type props = {
+type Props = {
   children: React.ReactNode
 }
 
-function RootLayout({ children }: props) {
+function RootLayout({ children }: Props) {
   return (
     <>
       <Head>
@@ -43,7 +43,7 @@ function RootLayout({ children }: props) {
 
       <Header />
 
-      <PageTransition>{children}</PageTransition>
+      <Main>{children}</Main>
 
       <Footer />
     </>

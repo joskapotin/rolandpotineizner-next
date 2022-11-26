@@ -22,7 +22,7 @@ function PageTransition({ children }: props) {
         initial="hidden" // Set the initial state to variants.hidden
         animate="enter" // Animated state to variants.enter
         exit="exit" // Exit state (used later) to variants.exit
-        transition={{ type: "spring", duration: 0.3 }} // Set the transition to linear
+        transition={{ type: "spring", duration: 0.5 }} // Set the transition to linear
         id="main-content"
         className="container mx-auto grid flex-grow origin-top content-start justify-items-center gap-y-24 px-2 sm:px-0 md:grid-cols-2 md:gap-x-6 lg:gap-x-7 xl:gap-x-8 2xl:gap-x-9"
       >
