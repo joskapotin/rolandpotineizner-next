@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { modulo } from "../../helpers/math"
 import useSwipe from "../../hooks/useSwipe"
 import CarouselDot from "./carousel-dot"
@@ -12,8 +12,6 @@ type Props = {
 function Carousel({ items }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
-
-  const carouselRef = useRef<HTMLDivElement>(null)
 
   const prevIndex = modulo(currentIndex - 1, items.length)
   const nextIndex = modulo(currentIndex + 1, items.length)
@@ -62,7 +60,6 @@ function Carousel({ items }: Props) {
 
       <div
         className="grid justify-items-center"
-        ref={carouselRef}
         onMouseEnter={() => setIsPlaying(false)}
         onMouseLeave={() => setIsPlaying(true)}
         onTouchStart={handleTouchStart}
