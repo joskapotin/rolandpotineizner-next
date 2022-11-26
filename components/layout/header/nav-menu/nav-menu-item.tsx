@@ -16,7 +16,7 @@ function NavMenuItem({ children, isOpen, toggleIsOpen, url, title }: Props) {
   return (
     <Link
       title={title}
-      className={`${isOpen ? "opacity-100 delay-100" : "opacity-0"} ${
+      className={`${isOpen ? "opacity-100" : "opacity-0"} ${
         isActive ? "text-gray-900 dark:text-gray-50" : "text-gray-400"
       } block transition duration-300 ease-in-out hover:text-gray-900 dark:hover:text-gray-50 sm:opacity-100 md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl`}
       href={url}
